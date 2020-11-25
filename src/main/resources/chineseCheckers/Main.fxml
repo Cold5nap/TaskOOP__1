@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane prefHeight="636.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chineseCheckers.MainController">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="666.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="menuSave" mnemonicParsing="false" onAction="#save" text="Сохранить" />
+                  <MenuItem fx:id="menuLoad" mnemonicParsing="false" onAction="#load" text="Загрузить" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <VBox alignment="CENTER" layoutY="27.0" prefHeight="609.0" prefWidth="658.0">
+         <children>
+            <HBox prefHeight="56.0" prefWidth="618.0">
+               <children>
+                  <VBox prefHeight="56.0" prefWidth="281.0">
+                     <children>
+                        <HBox prefHeight="44.0" prefWidth="281.0">
+                           <children>
+                              <Label prefHeight="39.0" prefWidth="110.0" text="Ходит игрок:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="playerOrderLabel" prefHeight="36.0" prefWidth="157.0" text="RED">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Button fx:id="nextStepButton" alignment="CENTER" mnemonicParsing="false" onAction="#nextPlayer" prefHeight="29.0" prefWidth="264.0" text="Закончить ход" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="TOP_RIGHT" prefHeight="49.0" prefWidth="329.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="119.0" text="Кол-во игроков">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="numPlayersTextField" alignment="CENTER" prefHeight="60.0" prefWidth="50.0" text="2">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="aceptNumButton" mnemonicParsing="false" onAction="#setNumPlayers" prefHeight="58.0" prefWidth="92.0" text="Подтвердить" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <StackPane fx:id="gameField" prefHeight="570.0" prefWidth="618.0" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</Pane>
